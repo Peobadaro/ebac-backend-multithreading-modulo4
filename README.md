@@ -16,6 +16,16 @@ A mesma extração roda de 3 jeitos e o script mostra o tempo de cada um:
 
 Como o trabalho é quase todo espera de rede (I/O), threads e processos ficam bem mais rápidos que o sequencial.
 
+## Resultado (execução real, 30 filmes, 10 threads)
+
+| Modo | Tempo | Ganho |
+|---|---|---|
+| Sequencial | 13,87 s | – |
+| Threads | 0,56 s | 24,8x mais rápido |
+| Processos | 1,14 s | 12,1x mais rápido |
+
+Threads venceram processos porque o trabalho é espera de rede (I/O). Processos custam mais para criar e não ganham nada com isso. Saída completa em `resultado_execucao.txt`; dados em `movies.csv`.
+
 ## Como rodar
 
 ```bash
